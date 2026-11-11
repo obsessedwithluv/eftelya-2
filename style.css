@@ -1685,3 +1685,26 @@ button:hover,.back-button:hover{border-color:var(--eft-pink)!important;box-shado
 .avatar-rainbow-ring{filter:saturate(.3) sepia(.18)}
 /* Videos intentionally not migrated */
 .secret-menu-overlay,.video-player-bg,.video-controls,.video-counter-text{display:none!important}
+
+/* Eftelya visual polish — November 2026 */
+:root{--eft-pink:#c45b8d;--eft-deep:#6d244c;--eft-light:#ffe6f1}
+html,body{max-width:100%;overflow-x:hidden}
+body{background:radial-gradient(ellipse at 48% 30%,#492039 0%,#210f21 45%,#09070d 100%)}
+.loading-intro{background:radial-gradient(circle at center,#32172c,#0c080e 70%)}
+.eftelya-butterfly{font-family:'Apple Color Emoji','Segoe UI Emoji',sans-serif!important;font-size:clamp(64px,12vw,112px)!important;line-height:1.3;letter-spacing:0!important;filter:drop-shadow(0 0 24px rgba(196,91,141,.4));animation:eft-butterfly-pulse 2.7s ease-in-out infinite}
+@keyframes eft-butterfly-pulse{50%{transform:translateY(-8px) scale(1.06);filter:drop-shadow(0 0 34px rgba(218,100,158,.6))}}
+.loading-bar-fill{background:linear-gradient(90deg,#792f58,#e59abf)!important}
+.eftelya-background{background:radial-gradient(ellipse at 50% 25%,rgba(180,60,112,.28),transparent 58%),radial-gradient(ellipse at 80% 85%,rgba(98,30,67,.25),transparent 50%),linear-gradient(145deg,#281322,#09070d)}
+.intro-overlay{background:linear-gradient(130deg,rgba(38,14,32,.38),rgba(12,7,16,.66))}
+.intro-overlay-inner{width:min(94vw,660px);max-width:100%;gap:clamp(12px,3vh,24px);padding:20px 12px;text-align:center}
+.intro-number{font-size:clamp(2.5rem,10vw,6.3rem)!important;letter-spacing:clamp(.02em,.5vw,.1em)!important;max-width:100%;overflow-wrap:anywhere;color:#ffe4ef!important;text-shadow:0 0 38px rgba(193,74,126,.42)}
+.intro-subtitle,.enter-text-label{color:#efb4d0!important}
+.floating-name{font-family:'Apple Color Emoji','Segoe UI Emoji',sans-serif!important;color:#db83ae!important;letter-spacing:0!important;text-shadow:0 0 18px rgba(219,83,144,.45)!important;filter:drop-shadow(0 0 9px rgba(194,70,130,.3))}
+.floating-name.visible{animation:name-drift 5.5s ease-in-out infinite alternate}
+.page{min-height:100dvh;height:100dvh;padding:clamp(22px,5vh,44px) 16px;overflow-y:auto;overflow-x:hidden}
+.profile{width:min(520px,100%);max-width:100%;margin:auto;gap:clamp(10px,2vh,18px)}
+.profile *{max-width:100%}
+.intro-music-player{max-width:min(90vw,400px)}
+.back-button{top:max(16px,env(safe-area-inset-top));left:max(16px,env(safe-area-inset-left))}
+@media(max-width:480px){.intro-overlay-inner{gap:14px;padding:14px 10px}.intro-number{font-size:clamp(2.4rem,12vw,4rem)!important}.floating-name{font-size:17px!important}.page{padding:62px 14px 28px}.profile{gap:12px}}
+@media(prefers-reduced-motion:reduce){.eftelya-butterfly{animation:none}.floating-name.visible{animation:none}}
