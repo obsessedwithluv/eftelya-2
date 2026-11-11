@@ -1732,3 +1732,7 @@ body{background:radial-gradient(ellipse at 48% 30%,#492039 0%,#210f21 45%,#09070
 .floating-butterfly{aspect-ratio:320/250!important;filter:drop-shadow(0 0 7px rgba(233,139,190,.38))!important}
 .floating-butterfly img{width:100%;height:auto;opacity:.92}
 @media(max-width:480px){.floating-word{font-size:21px!important;max-width:115px!important}.floating-heart{font-size:34px!important}}
+
+/* Main EFTELYA heading: gothic blackletter; floating field contains symbols only */
+.intro-number{font-family:'UnifrakturCook','Old English Text MT',Georgia,serif!important;font-weight:700!important;font-style:normal!important;letter-spacing:.025em!important;text-transform:none!important;font-size:clamp(3.6rem,12vw,8rem)!important;line-height:1.2!important;text-shadow:0 0 22px rgba(221,113,171,.45),0 3px 0 rgba(78,28,56,.7)!important}
+@media(max-width:480px){.intro-number{font-size:clamp(3.3rem,14vw,5rem)!important;letter-spacing:0!important}}
