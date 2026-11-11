@@ -1331,12 +1331,10 @@ function initIntroOverlay() {
         // The overlay stays in the DOM with opacity: 0 from the fade-out class
     };
 
-    overlay.addEventListener('click', dismiss);
-    overlay.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            dismiss();
-        }
+    const enterButton = document.getElementById('eftelya-enter');
+    if (enterButton) enterButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        dismiss();
     });
 }
 
