@@ -1347,13 +1347,13 @@ function initFloatingNames() {
     const overlay = document.getElementById('intro-overlay');
     if (!container) return;
 
-    const names = ['Eftelya'];
+    const names = ['🦋', '🦋', '♡', '✧', '🦋'];
 
-    const TARGET_COUNT = 7;
-    const MIN_COUNT = 6;
+    const TARGET_COUNT = 9;
+    const MIN_COUNT = 7;
     const MAX_ATTEMPTS = 80;
-    const CENTER_DISTANCE = 180;
-    const MIN_NAME_DISTANCE = 140;
+    const CENTER_DISTANCE = 45;
+    const MIN_NAME_DISTANCE = 95;
     const MARGIN = 30;
     const MAX_PER_ZONE = 2;
 
