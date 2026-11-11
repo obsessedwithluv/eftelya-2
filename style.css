@@ -1848,3 +1848,61 @@ body{background:radial-gradient(ellipse at 48% 30%,#492039 0%,#210f21 45%,#09070
   .device-presence { gap: 6px !important; padding: 8px !important; }
   .spotify-music-player { padding: 12px 9px !important; gap: 6px !important; }
 }
+
+
+/* Avatar-specific fix: identical concentric centers on all screens */
+.profile .avatar-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+  margin-inline: auto !important;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  flex: 0 0 auto;
+}
+.profile .avatar-rainbow-ring {
+  position: absolute;
+  inset: -4px;
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+  transform: none;
+}
+.profile .avatar-container {
+  position: relative;
+  inset: auto;
+  width: 112px;
+  height: 112px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  flex: none;
+}
+.profile .avatar-container .avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .profile .avatar-wrapper {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+  }
+  .profile .avatar-container {
+    width: 112px;
+    height: 112px;
+  }
+}
