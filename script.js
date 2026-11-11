@@ -1347,10 +1347,10 @@ function initFloatingNames() {
     const overlay = document.getElementById('intro-overlay');
     if (!container) return;
 
-    const names = ['butterfly'];
+    const names = ['EFTELYA', 'EFTELYA', 'butterfly', 'butterfly', 'heart', 'heart', 'heart'];
 
-    const TARGET_COUNT = 9;
-    const MIN_COUNT = 7;
+    const TARGET_COUNT = 8;
+    const MIN_COUNT = 6;
     const MAX_ATTEMPTS = 80;
     const CENTER_DISTANCE = 45;
     const MIN_NAME_DISTANCE = 95;
@@ -1465,14 +1465,15 @@ function initFloatingNames() {
         testEl.className = 'floating-name';
         testEl.style.visibility = 'hidden';
         testEl.style.position = 'absolute';
-        testEl.style.width = `${Math.random() * 35 + 55}px`;
-        testEl.innerHTML = '<img src="assets/eftelya-gothic-butterfly.svg" alt="" />';
+        testEl.classList.add(name === 'EFTELYA' ? 'floating-word' : name === 'heart' ? 'floating-heart' : 'floating-butterfly');
+        testEl.style.width = name === 'EFTELYA' ? '115px' : name === 'heart' ? '34px' : '72px';
+        testEl.innerHTML = name === 'EFTELYA' ? 'EFTELYA' : name === 'heart' ? '♡' : '<img src="assets/eftelya-gothic-butterfly.svg" alt="" />';
         container.appendChild(testEl);
 
         let x, y, attempt = 0;
         do {
-            x = zone.x + Math.random() * (zone.w - testEl.offsetWidth - MARGIN * 2) + MARGIN;
-            y = zone.y + Math.random() * (zone.h - testEl.offsetHeight - MARGIN * 2) + MARGIN;
+            x = zone.x + Math.random() * Math.max(1, zone.w - testEl.offsetWidth - MARGIN * 2) + MARGIN;
+            y = zone.y + Math.random() * Math.max(1, zone.h - testEl.offsetHeight - MARGIN * 2) + MARGIN;
             attempt++;
         } while ((isInCenterArea(x, y, testEl.offsetWidth, testEl.offsetHeight) ||
                   isTooClose(x, y, testEl.offsetWidth, testEl.offsetHeight)) && attempt < MAX_ATTEMPTS);
@@ -1495,8 +1496,9 @@ function initFloatingNames() {
 
         const el = document.createElement('span');
         el.className = 'floating-name';
-        el.innerHTML = '<img src="assets/eftelya-gothic-butterfly.svg" alt="" />';
-        el.style.width = `${Math.random() * 36 + 48}px`;
+        el.classList.add(name === 'EFTELYA' ? 'floating-word' : name === 'heart' ? 'floating-heart' : 'floating-butterfly');
+        el.innerHTML = name === 'EFTELYA' ? 'EFTELYA' : name === 'heart' ? '♡' : '<img src="assets/eftelya-gothic-butterfly.svg" alt="" />';
+        el.style.width = name === 'EFTELYA' ? '115px' : name === 'heart' ? '34px' : `${Math.random() * 28 + 56}px`;
         el.style.left = `${position.x}px`;
         el.style.top = `${position.y}px`;
         el.style.transitionDuration = `${fadeInDuration}ms`;
