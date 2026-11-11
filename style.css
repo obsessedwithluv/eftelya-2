@@ -1906,3 +1906,52 @@ body{background:radial-gradient(ellipse at 48% 30%,#492039 0%,#210f21 45%,#09070
     height: 112px;
   }
 }
+
+
+/* Final mobile PFP correction: remove black inner crescent and align all layers */
+.profile .avatar-wrapper {
+  box-sizing: border-box;
+  display: grid !important;
+  place-items: center !important;
+}
+.profile .avatar-rainbow-ring {
+  inset: 0 !important;
+  background: #f9e8ef !important;
+  border: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+.profile .avatar-rainbow-ring::after {
+  content: none !important;
+  display: none !important;
+}
+.profile .avatar-container {
+  width: calc(100% - 8px) !important;
+  height: calc(100% - 8px) !important;
+  background: transparent !important;
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.profile .avatar-container .avatar {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.profile .avatar-wrapper:hover .avatar { transform: none !important; }
+@media (max-width: 600px) {
+  .profile { gap: 13px !important; }
+  .profile .avatar-wrapper {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  .profile .spotify-music-player {
+    margin-top: 10px !important;
+  }
+}
