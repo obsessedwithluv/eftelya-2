@@ -1755,3 +1755,7 @@ body{background:radial-gradient(ellipse at 48% 30%,#492039 0%,#210f21 45%,#09070
 .intro-number{font-family:'Cormorant Garamond',Georgia,serif!important;font-weight:300!important;font-size:clamp(4rem,11.5vw,9rem)!important;letter-spacing:.12em!important;line-height:1.15!important;color:#f8dfe9!important;text-shadow:0 0 24px rgba(210,100,155,.3)!important}
 .intro-number:hover{transform:scale(1.025)!important}
 @media(max-width:480px){.intro-overlay::after{inset:20px 12px;border-radius:45% 45% 42% 42% / 5% 5% 5% 5%}.intro-number{font-size:clamp(3.2rem,12.5vw,5rem)!important;letter-spacing:.045em!important}.eft-ornament{letter-spacing:.85em}}
+
+/* Soft rose butterfly for Eftelya floating ornaments */
+.floating-butterfly{filter:drop-shadow(0 0 10px rgba(229,143,188,.28))!important;aspect-ratio:1.2!important}
+.floating-butterfly img{opacity:.88!important;object-fit:contain}
