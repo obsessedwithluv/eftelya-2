@@ -4,7 +4,7 @@
    ======================================== */
 
 // Discord User ID - CHANGE THIS to your Discord User ID
-const DISCORD_USER_ID = '277183916186796032';
+const DISCORD_USER_ID = '819134336787152906';
 
 // EXACTLY 3 Songs - CHANGE THESE to your music files
 const MUSIC_PLAYLIST = [
