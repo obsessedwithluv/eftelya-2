@@ -1717,3 +1717,10 @@ body{background:radial-gradient(ellipse at 48% 30%,#492039 0%,#210f21 45%,#09070
 .floating-name img{width:100%;height:100%;object-fit:contain;display:block;opacity:.9}
 @media(max-width:480px){.eftelya-floral-intro img{width:104px;height:148px}.floating-name{max-width:64px}}
 @media(prefers-reduced-motion:reduce){.eftelya-floral-intro img{animation:none}}
+
+/* Eftelya clean layout: tap the title to enter, hide unrelated social/location UI */
+.intro-enter-text,.intro-subtitle,.intro-music-player,.custom-status,.profile-links,.view-counter{display:none!important}
+.intro-number{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;transition:transform .25s ease,text-shadow .25s ease}
+.intro-number:hover,.intro-number:focus-visible{transform:scale(1.035);text-shadow:0 0 46px rgba(235,134,185,.7)}
+.intro-overlay-inner{gap:0!important}
+.profile{justify-content:center}
