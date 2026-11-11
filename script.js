@@ -1345,7 +1345,7 @@ function initFloatingNames() {
     const overlay = document.getElementById('intro-overlay');
     if (!container) return;
 
-    const names = ['heart', 'heart', 'heart', 'heart'];
+    const names = ['heart', 'heart', 'heart', 'butterfly', 'butterfly'];
 
     const TARGET_COUNT = 8;
     const MIN_COUNT = 6;
