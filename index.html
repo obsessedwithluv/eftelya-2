@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%A6%8B%3C/text%3E%3C/svg%3E">
+    <title>Eftelya ♡</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Intro Screen -->
+    <div id="loading-intro" class="loading-intro">
+        <div class="loading-intro-content">
+            <div class="loading-intro-text">MADE FOR EFTELYA</div>
+            <div class="loading-bar-track">
+                <div id="loading-bar-fill" class="loading-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor Glow (desktop only) -->
+    <div id="cursor-glow" class="cursor-glow"></div>
+    <div id="cursor-trail" class="cursor-trail-container"></div>
+
+    <!-- Secret Video Overlay Menu -->
+    <div id="secret-menu-overlay" class="secret-menu-overlay" aria-hidden="true">
+        <video id="secret-video-player" class="secret-video-player" playsinline></video>
+        <div class="secret-menu-nav">
+            <button id="secret-nav-left" class="secret-nav-btn secret-nav-left" title="Return to site">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="secret-nav-right" class="secret-nav-btn secret-nav-right" title="Next video">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div id="secret-video-title" class="secret-video-title"></div>
+    </div>
+
+    <!-- Background -->
+    <div class="background-container">
+        <div class="eftelya-background"></div>
+    </div>
+
+    <div id="intro-overlay" class="intro-overlay" role="button" tabindex="0" aria-label="Enter site">
+        <!-- HUD Background Elements -->
+        <div class="hud-grid"></div>
+        <canvas id="intro-particles" class="intro-particles"></canvas>
+        <div id="floating-names" class="floating-names" aria-hidden="true"></div>
+
+        <!-- HUD Corner Brackets -->
+        <div class="hud-corner hud-corner-tl"></div>
+        <div class="hud-corner hud-corner-tr"></div>
+        <div class="hud-corner hud-corner-bl"></div>
+        <div class="hud-corner hud-corner-br"></div>
+
+        <!-- Center Content -->
+        <div class="intro-overlay-inner">
+            <div class="intro-number">EFTELYA</div>
+            <div class="intro-enter-text">
+                <span class="enter-text-label">ENTER THE VOID</span>
+                <span class="enter-text-underline"></span>
+            </div>
+            <div class="intro-subtitle">THE EXPERIENCE BEGINS</div>
+
+            <!-- Intro Music Player -->
+            <div class="intro-music-player" id="intro-music-player">
+                <div class="intro-music-controls">
+                    <button id="intro-start-btn" class="intro-control-btn" title="Start">
+                        <span class="btn-icon">▶</span>
+                    </button>
+                    <button id="intro-stop-btn" class="intro-control-btn" title="Stop">
+                        <span class="btn-icon">✕</span>
+                    </button>
+                </div>
+                <div class="intro-controls-divider"></div>
+                <div class="intro-progress-container">
+                    <div class="intro-progress-track">
+                        <div id="intro-progress-fill" class="intro-progress-fill"></div>
+                        <div id="intro-progress-dot" class="intro-progress-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Intro Screen Audio -->
+        <audio id="startscreenAudio" preload="metadata">
+            <source src="assets/startscreen.wav" type="audio/wav">
+        </audio>
+
+        <!-- Scanning Lines -->
+        <div class="hud-scanlines"></div>
+    </div>
+
+    <main class="page">
+        <!-- Back Button -->
+        <button id="back-to-intro-btn" class="back-button" title="Back to intro">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+
+        <div class="profile">
+            <!-- Profile Picture with Rainbow Ring -->
+            <div class="avatar-wrapper" id="avatar-trigger">
+                <div class="avatar-rainbow-ring"></div>
+                <div class="avatar-container">
+                    <img id="discord-avatar" src="" alt="Avatar" class="avatar">
+                </div>
+                <div id="avatar-presence" class="avatar-presence offline" aria-label="Discord: Offline" title="Offline"><span class="avatar-presence-symbol"></span></div>
+            </div>
+
+            <!-- Live Discord device presence -->
+            <div class="device-presence" id="device-presence" aria-label="Discord device activity">
+                <span class="device-presence-item" id="device-desktop" title="PC: Offline"><i class="fas fa-desktop" aria-hidden="true"></i><span>PC</span><span class="device-presence-dot"></span></span>
+                <span class="device-presence-item" id="device-mobile" title="Mobile: Offline"><i class="fas fa-mobile-alt" aria-hidden="true"></i><span>Mobile</span><span class="device-presence-dot"></span></span>
+                <span class="device-presence-item" id="device-web" title="Web: Offline"><i class="fas fa-globe" aria-hidden="true"></i><span>Web</span><span class="device-presence-dot"></span></span>
+            </div>
+
+            <!-- Username and Discord Badges -->
+            <div class="username-section">
+                <h1 id="discord-username" class="username">
+                    <span id="username-text">Loading...</span>
+                    <span id="discord-discriminator" class="discriminator"></span>
+                </h1>
+                <div id="badges-container" class="badges-row"></div>
+            </div>
+
+            <div id="custom-status-card" class="custom-status-card hidden" aria-hidden="true">
+                <span class="custom-status-card-icon" aria-hidden="true">
+                    <i class="fas fa-message"></i>
+                </span>
+                <span id="custom-status-text" class="custom-status-card-label"></span>
+            </div>
+
+            <!-- Static Discord Links -->
+            <div class="custom-status" style="display: block;">
+                <a href="http://discord.gg/337" class="discord-link-text" target="_blank" rel="noopener noreferrer">discord.gg/337</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="profile-links">
+                <a href="#" id="discord-link" class="profile-link" target="_blank" title="Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="#" id="steam-link" class="profile-link" target="_blank" title="Steam">
+                    <i class="fab fa-steam"></i>
+                </a>
+                <a href="#" id="spotify-link" class="profile-link" target="_blank" title="Spotify">
+                    <i class="fab fa-spotify"></i>
+                </a>
+                <a href="https://www.instagram.com/ucucyedi/" id="instagram-link" class="profile-link" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            <!-- Spotify Music Section -->
+            <section class="spotify-music-player" aria-label="Now Playing">
+                <div class="album-cover-container" aria-hidden="true">
+                    <img id="album-cover" src="" alt="Album Cover" class="album-cover hidden">
+                    <div class="album-placeholder">
+                        <i class="fab fa-spotify"></i>
+                    </div>
+                </div>
+
+                <div class="spotify-meta">
+                    <div class="song-title" id="song-title">Not playing</div>
+                    <div class="song-artist" id="song-artist">Spotify</div>
+                    <div class="track-progress" aria-hidden="true">
+                        <div id="track-progress-bar" class="track-progress-bar"></div>
+                    </div>
+                </div>
+
+                <div class="music-controls" aria-hidden="true">
+                    <button id="prev-btn" class="music-btn" title="Previous" type="button">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button id="play-pause-btn" class="music-btn play-pause" title="Play/Pause" type="button">
+                        <i id="play-icon" class="fas fa-play"></i>
+                        <i id="pause-icon" class="fas fa-pause hidden"></i>
+                    </button>
+                    <button id="next-btn" class="music-btn" title="Next" type="button">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                </div>
+            </section>
+
+            <div class="view-counter" aria-label="Location">
+                <i class="fas fa-location-dot" style="font-size: 13px; opacity: 0.7;"></i>
+                <span id="visitor-location" class="view-counter-text">LOCATING...</span>
+            </div>
+
+            <!-- Video Player Controls (below location) -->
+            <div class="video-controls" aria-hidden="true">
+                <button id="video-prev-btn" class="video-control-btn" title="Previous Video">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button id="video-play-btn" class="video-control-btn" title="Play Video">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="video-pause-btn" class="video-control-btn hidden" title="Pause Video">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <button id="video-next-btn" class="video-control-btn" title="Next Video">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <button id="video-stop-btn" class="video-control-btn" title="Stop Video">
+                    <i class="fas fa-square"></i>
+                </button>
+            </div>
+            <div class="video-counter-text">
+                <span id="video-current">01</span> / <span id="video-total">05</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Video Player -->
+    <div id="video-player-bg" class="video-player-bg">
+        <video id="musical-video" class="musical-video" playsinline></video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Audio element for music player -->
+    <audio id="background-music"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
