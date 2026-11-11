@@ -1708,3 +1708,12 @@ body{background:radial-gradient(ellipse at 48% 30%,#492039 0%,#210f21 45%,#09070
 .back-button{top:max(16px,env(safe-area-inset-top));left:max(16px,env(safe-area-inset-left))}
 @media(max-width:480px){.intro-overlay-inner{gap:14px;padding:14px 10px}.intro-number{font-size:clamp(2.4rem,12vw,4rem)!important}.floating-name{font-size:17px!important}.page{padding:62px 14px 28px}.profile{gap:12px}}
 @media(prefers-reduced-motion:reduce){.eftelya-butterfly{animation:none}.floating-name.visible{animation:none}}
+
+/* Custom tattoo-inspired artwork: no system emoji */
+.eftelya-floral-intro{display:flex!important;align-items:center;justify-content:center;line-height:1!important;letter-spacing:0!important;filter:none!important}
+.eftelya-floral-intro img{display:block;width:clamp(88px,17vw,150px);height:clamp(125px,24vw,195px);object-fit:contain;filter:drop-shadow(0 0 13px rgba(215,117,166,.28));animation:eft-flower-float 3.8s ease-in-out infinite alternate}
+@keyframes eft-flower-float{to{transform:translateY(-8px) rotate(2deg)}}
+.floating-name{display:block;width:65px;height:auto;aspect-ratio:320/250;letter-spacing:0!important;line-height:0;filter:drop-shadow(0 0 9px rgba(220,128,178,.3))!important}
+.floating-name img{width:100%;height:100%;object-fit:contain;display:block;opacity:.9}
+@media(max-width:480px){.eftelya-floral-intro img{width:104px;height:148px}.floating-name{max-width:64px}}
+@media(prefers-reduced-motion:reduce){.eftelya-floral-intro img{animation:none}}
