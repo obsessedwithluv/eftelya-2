@@ -1742,3 +1742,16 @@ body{background:radial-gradient(ellipse at 48% 30%,#492039 0%,#210f21 45%,#09070
 .intro-number:focus-visible{outline:2px solid #f4b5d3;outline-offset:8px}
 .intro-overlay{cursor:default!important}
 @media(max-width:480px){.intro-number{font-size:clamp(2.15rem,9.2vw,3.5rem)!important;padding:10px 3px!important}}
+
+/* Eftelya romantic entry, no HUD corners or scanning-grid aesthetic */
+.hud-corner,.hud-grid,.hud-scanlines{display:none!important}
+.intro-overlay{background:radial-gradient(ellipse at 50% 42%,rgba(110,38,78,.25),rgba(19,8,19,.88) 64%,rgba(9,6,12,.97) 100%)!important}
+.intro-overlay::before{opacity:.22!important}
+.intro-overlay::after{content:'';position:absolute;inset:clamp(18px,5vw,52px);border:1px solid rgba(240,166,202,.17);border-radius:46% 46% 42% 42% / 9% 9% 9% 9%;box-shadow:inset 0 0 45px rgba(169,68,119,.06),0 0 24px rgba(169,68,119,.05);pointer-events:none;z-index:2}
+.eft-ornament{position:absolute;left:50%;transform:translateX(-50%);z-index:4;font-family:Georgia,serif;font-size:clamp(14px,3vw,21px);letter-spacing:1.5em;white-space:nowrap;color:rgba(242,173,209,.58);text-shadow:0 0 18px rgba(235,112,178,.28);pointer-events:none}
+.eft-ornament span{font-size:1.1em;letter-spacing:0}
+.eft-ornament-top{top:clamp(30px,7vh,72px)}
+.eft-ornament-bottom{bottom:clamp(30px,7vh,72px)}
+.intro-number{font-family:'Cormorant Garamond',Georgia,serif!important;font-weight:300!important;font-size:clamp(4rem,11.5vw,9rem)!important;letter-spacing:.12em!important;line-height:1.15!important;color:#f8dfe9!important;text-shadow:0 0 24px rgba(210,100,155,.3)!important}
+.intro-number:hover{transform:scale(1.025)!important}
+@media(max-width:480px){.intro-overlay::after{inset:20px 12px;border-radius:45% 45% 42% 42% / 5% 5% 5% 5%}.intro-number{font-size:clamp(3.2rem,12.5vw,5rem)!important;letter-spacing:.045em!important}.eft-ornament{letter-spacing:.85em}}
