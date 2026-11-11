@@ -1347,7 +1347,7 @@ function initFloatingNames() {
     const overlay = document.getElementById('intro-overlay');
     if (!container) return;
 
-    const names = ['🦋', '🦋', '♡', '✧', '🦋'];
+    const names = ['butterfly'];
 
     const TARGET_COUNT = 9;
     const MIN_COUNT = 7;
@@ -1465,8 +1465,8 @@ function initFloatingNames() {
         testEl.className = 'floating-name';
         testEl.style.visibility = 'hidden';
         testEl.style.position = 'absolute';
-        testEl.style.fontSize = `${Math.random() * 8 + 16}px`;
-        testEl.textContent = name;
+        testEl.style.width = `${Math.random() * 35 + 55}px`;
+        testEl.innerHTML = '<img src="assets/eftelya-gothic-butterfly.svg" alt="" />';
         container.appendChild(testEl);
 
         let x, y, attempt = 0;
@@ -1495,8 +1495,8 @@ function initFloatingNames() {
 
         const el = document.createElement('span');
         el.className = 'floating-name';
-        el.textContent = name;
-        el.style.fontSize = `${size}px`;
+        el.innerHTML = '<img src="assets/eftelya-gothic-butterfly.svg" alt="" />';
+        el.style.width = `${Math.random() * 36 + 48}px`;
         el.style.left = `${position.x}px`;
         el.style.top = `${position.y}px`;
         el.style.transitionDuration = `${fadeInDuration}ms`;
