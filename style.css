@@ -1724,3 +1724,11 @@ body{background:radial-gradient(ellipse at 48% 30%,#492039 0%,#210f21 45%,#09070
 .intro-number:hover,.intro-number:focus-visible{transform:scale(1.035);text-shadow:0 0 46px rgba(235,134,185,.7)}
 .intro-overlay-inner{gap:0!important}
 .profile{justify-content:center}
+
+/* Gothic Shoota-inspired floating lettering, hearts and tattoo butterflies */
+.floating-name{height:auto!important;aspect-ratio:auto!important;line-height:1!important;display:flex!important;align-items:center;justify-content:center;box-sizing:border-box;white-space:nowrap}
+.floating-word{font-family:Impact,'Arial Black',sans-serif!important;font-size:23px!important;font-weight:900!important;font-style:italic;letter-spacing:-.065em!important;transform-origin:center;text-transform:uppercase;color:#ffe2ee!important;-webkit-text-stroke:.65px #a74d7d;text-shadow:2px 2px 0 #6e2d50,0 0 18px rgba(233,132,187,.42)!important}
+.floating-heart{font-family:Georgia,serif!important;font-size:38px!important;font-weight:400;color:#f4a6c9!important;text-shadow:0 0 15px rgba(241,129,186,.5)!important}
+.floating-butterfly{aspect-ratio:320/250!important;filter:drop-shadow(0 0 7px rgba(233,139,190,.38))!important}
+.floating-butterfly img{width:100%;height:auto;opacity:.92}
+@media(max-width:480px){.floating-word{font-size:21px!important;max-width:115px!important}.floating-heart{font-size:34px!important}}
